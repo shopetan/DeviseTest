@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-
-  root 'admin/base#index' # ログイン画面をルートにする
-  get '/admin' => 'admin/base#index'
-
-  devise_for :admin_users
-  resources :hoges
-
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

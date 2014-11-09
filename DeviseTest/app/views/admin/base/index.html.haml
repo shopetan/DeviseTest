@@ -1,9 +1,0 @@
-%h1 Admin::Base#index
-%p Find me in app/views/admin/base/index.html.erb
-
-# ↓ 以下を追記
-- if can? :admin, current_admin_user
-  %p admin information
-
-- if can? :member, current_admin_user
-  %p member information
