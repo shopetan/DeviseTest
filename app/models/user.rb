@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   
 #tuika
   has_and_belongs_to_many :roles
+  has_many :questions
+  
 
   def has_role?(name)
     self.roles.where(name: name).length > 0

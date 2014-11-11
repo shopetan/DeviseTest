@@ -16,9 +16,9 @@
         <td><%= q_text.number %></td>
         <td><%= q_text.content %></td>
         <td><%= q_text.check %></td>
-        <td><%= link_to 'Show', q_text %></td>
-        <td><%= link_to 'Edit', edit_q_text_path(q_text) %></td>
-        <td><%= link_to 'Destroy', q_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', question_q_texts %></td>
+        <td><%= link_to 'Edit', edit_question_q_text_path(q_text) %></td>
+        <td><%= link_to 'Destroy', question_q_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Q text', new_q_text_path %>
+<%= link_to 'New Q text', new_question_q_text_path %>

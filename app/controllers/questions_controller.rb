@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
     @user = current_user
     @questions = Question.all
     respond_with(@questions)
+    @questions = Question.where(user_id: current_user.id)
   end
 
   def show

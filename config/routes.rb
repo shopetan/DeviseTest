@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :q_texts
-
-  resources :questions
-
+  
+  resources :questions do 
+    resources :q_texts
+  end
+    
   get 'welcome/index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

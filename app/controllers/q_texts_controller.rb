@@ -6,6 +6,7 @@ class QTextsController < ApplicationController
   def index
     @q_texts = QText.all
     respond_with(@q_texts)
+    
   end
 
   def show
@@ -13,17 +14,23 @@ class QTextsController < ApplicationController
   end
 
   def new
+#    @quesiton = Question.find(params[:quesiton_id])
+#    @q_text = @quesitn.q_texts.build
+#    respond_with(@q_text)
     @q_text = QText.new
-    respond_with(@q_text)
+    @q_text.question_id = params[:question_id]
+
+
+    redirect_to questions_path(@questions.id)
   end
 
   def edit
   end
 
   def create
-    @q_text = QText.new(q_text_params)
-    @q_text.save
-    respond_with(@q_text)
+    @questions = Question.find(params[:question_id])
+    @q_text = @questions.q_text.create(q_text_params)
+    redirect_to questions_path(@questions.id)
   end
 
   def update
