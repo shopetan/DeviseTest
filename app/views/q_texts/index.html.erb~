@@ -1,0 +1,29 @@
+<h1>Listing q_texts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Content</th>
+      <th>Check</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @q_texts.each do |q_text| %>
+      <tr>
+        <td><%= q_text.number %></td>
+        <td><%= q_text.content %></td>
+        <td><%= q_text.check %></td>
+        <td><%= link_to 'Show', question_q_texts_path %></td>
+        <td><%= link_to 'Edit', edit_question_q_text_path(q_text.id) %></td>
+        <td><%= link_to 'Destroy', question_q_text_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Q text', new_question_q_text_path %>

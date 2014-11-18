@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @q_text.number %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @q_text.content %>
+</p>
+
+<p>
+  <strong>Check:</strong>
+  <%= @q_text.check %>
+</p>
+
+<%= link_to 'Edit', edit_question_q_text_path(@question,@q_text) %> |
+<%= link_to 'Back', question_q_texts_path %>
